@@ -48,9 +48,9 @@ public struct CertEvaluator: ServerTrustEvaluating {
         return
       }
     }
-    #if !DEBUG || !targetEnvironment(simulator)
+    /*#if !DEBUG || !targetEnvironment(simulator)
     throw Error()
-    #endif
+    #endif*/
     print("\nFATAL: None of the hashes matched our public keys! These keys were loaded:")
     print(pubKeys.joined(separator: "\n"))
     print("\nThe server returned this chain:")
