@@ -391,7 +391,9 @@ public struct HCert {
         switch type {
         case .vaccine:
             if let statement = vaccineStatements.last {
-                return statement.diseaseTargeted
+                let diseaseTargeted = l10n("disease." + statement.diseaseTargeted)
+                let dose = String(describing: statement.doseNumber) + " of " + String(describing:  statement.dosesTotal)
+                return diseaseTargeted + ": " + dose
             }
             break
         default:
