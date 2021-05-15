@@ -393,6 +393,7 @@ public struct HCert {
             if let statement = vaccineStatements.last {
                 let diseaseTargeted = l10n("disease." + statement.diseaseTargeted)
                 let dose = String(describing: statement.doseNumber) + " of " + String(describing:  statement.dosesTotal)
+                print("diseaseTargeted \(diseaseTargeted)")
                 return diseaseTargeted + ": " + dose
             }
             break
