@@ -385,4 +385,18 @@ public struct HCert {
   public var keyPair: SecKey! {
     Enclave.loadOrGenerateKey(with: uvci)
   }
+    // To display in a list
+    public var title: String {
+        var str = ""
+        switch type {
+        case .vaccine:
+            if let statement = vaccineStatements.last {
+                return statement.diseaseTargeted
+            }
+            break
+        default:
+            fatalError("We can not yet handle \(type) ")
+        }
+        return str
+    }
 }

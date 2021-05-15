@@ -33,10 +33,10 @@ enum TestResult: String {
   case notDetected = "260415000"
 }
 
-public struct TestEntry: HCertEntry {
-    public var typeAddon: String { "" }
+struct TestEntry: HCertEntry {
+  var typeAddon: String { "" }
 
-    public var info: [InfoSection] {
+  var info: [InfoSection] {
     [
       InfoSection(header: l10n("test.sample-date-time"), content: sampleTime.dateTimeStringUtc),
       InfoSection(
@@ -65,7 +65,7 @@ public struct TestEntry: HCertEntry {
     ]
   }
 
-    public var validityFailures: [String] {
+  var validityFailures: [String] {
     var fail = [String]()
     if !resultNegative {
       fail.append(l10n("hcert.err.tst.positive"))
@@ -118,5 +118,5 @@ public struct TestEntry: HCertEntry {
   var testCenter: String
   var countryCode: String
   var issuer: String
-    public var uvci: String
+  var uvci: String
 }
