@@ -304,6 +304,12 @@ public struct HCert {
     let last = get(.lastName).string ?? ""
     return "\(first) \(last)"
   }
+    
+    public var standardizedFullName: String {
+        let first = get(.firstNameStandardized).string ?? ""
+        let last = get(.lastNameStandardized).string ?? ""
+        return "\(first) \(last)"
+    }
 
   public var dateOfBirth: Date? {
     guard let dateString = get(.dateOfBirth).string else {
@@ -394,12 +400,18 @@ public struct HCert {
                 let diseaseTargeted = l10n("disease." + statement.diseaseTargeted)
                 let dose = String(describing: statement.doseNumber) + " of " + String(describing:  statement.dosesTotal)
                 print("diseaseTargeted \(diseaseTargeted)")
-                return diseaseTargeted + ": " + dose
+                return diseaseTargeted + " " + dose
             }
             break
         default:
             fatalError("We can not yet handle \(type) ")
         }
         return str
+    }
+    
+    // TODO: Handle the different failure modes
+    
+    public var statusImage: UIImage? {
+        return UIImage(named:"")
     }
 }
