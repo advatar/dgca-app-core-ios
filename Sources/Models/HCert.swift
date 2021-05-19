@@ -350,6 +350,16 @@ public struct HCert {
   public var statement: HCertEntry! {
     statements.last
   }
+    public var types: [HCertType] {
+        var ret = [HCertType]()
+        for statement in statements {
+            if let type = HCertType(rawValue: statement.typeAddon) {
+                ret.append(type)
+            }
+        }
+        return ret
+    }
+    
   public var type: HCertType {
     if statement is VaccinationEntry {
       return .vaccine
@@ -400,18 +410,15 @@ public struct HCert {
                 let diseaseTargeted = l10n("disease." + statement.diseaseTargeted)
                 let dose = String(describing: statement.doseNumber) + " of " + String(describing:  statement.dosesTotal)
                 print("diseaseTargeted \(diseaseTargeted)")
-                return diseaseTargeted + " " + dose
+                str += diseaseTargeted + " " + dose
             }
             break
         default:
             fatalError("We can not yet handle \(type) ")
         }
+        
         return str
     }
     
-    // TODO: Handle the different failure modes
-    
-    public var statusImage: UIImage? {
-        return UIImage(named:"")
-    }
+
 }
