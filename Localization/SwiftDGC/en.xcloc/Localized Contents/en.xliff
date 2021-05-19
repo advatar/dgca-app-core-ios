@@ -1338,6 +1338,11 @@
         <target>Cryptographic signature not valid.</target>
         <note/>
       </trans-unit>
+      <trans-unit id="hcert.err.empty" xml:space="preserve">
+        <source>No entries in the certificate.</source>
+        <target>No entries in the certificate.</target>
+        <note/>
+      </trans-unit>
       <trans-unit id="hcert.err.exp" xml:space="preserve">
         <source>Certificate past expiration date.</source>
         <target>Certificate past expiration date.</target>
@@ -1396,6 +1401,21 @@
       <trans-unit id="header.uvci" xml:space="preserve">
         <source>Unique Certificate Identifier</source>
         <target>Unique Certificate Identifier</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="header.validity-errors" xml:space="preserve">
+        <source>Reason for Invalidity</source>
+        <target>Reason for Invalidity</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="info.outdated" xml:space="preserve">
+        <source>Update Available</source>
+        <target>Update Available</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="info.outdated.body" xml:space="preserve">
+        <source>This application is not up to date. Please open the App Store and download the newest version!</source>
+        <target>This application is not up to date. Please open the App Store and download the newest version!</target>
         <note/>
       </trans-unit>
       <trans-unit id="recovery.country" xml:space="preserve">
